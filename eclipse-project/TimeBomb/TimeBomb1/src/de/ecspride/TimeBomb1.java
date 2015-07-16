@@ -10,8 +10,11 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 /**
- * @testcase_name Manufacter and SDK version
- * Inspired by 096_BaseBridge-f8c3a32abf4ea4ea94ee5dc3c75801c90c6e1145/com/keji/fixedposition/BaseAActivity.java:127
+ * @testcase_name TimeBomb: triggers the payload on the DroidDream fashion
+ * Inspired by Fig1.a in AppContext: Differentiating Malicious and Benign 
+ * Mobile App Behaviors Using Context (Wei Yang, et al. 2015)
+ * 
+ * To be tested with DroidDream family.
  */
 public class TimeBomb1 extends Activity {
 	@Override
