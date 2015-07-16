@@ -1,24 +1,18 @@
 
 package de.ecspride;
 
-import java.util.Date;
-
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.Signature;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 /**
- * @testcase_name TimeBomb: triggers the payload on the DroidDream fashion
- * Inspired by Fig1.a in AppContext: Differentiating Malicious and Benign 
- * Mobile App Behaviors Using Context (Wei Yang, et al. 2015)
+ * @testcase_name Signature Verification: http://www.csc.ncsu.edu/faculty/jiang/pubs/AnserverBot_Analysis.pdf
  * 
- * To be tested with DroidDream family.
+ * To be tested with AnserverBot family.
  */
 public class SignatureVerification extends Activity {
 	@Override
@@ -35,6 +29,7 @@ public class SignatureVerification extends Activity {
 		try {
 			sig = context.getPackageManager().getPackageInfo(context.getPackageName(),PackageManager.GET_SIGNATURES).signatures[0].toCharsString();
 		} catch (NameNotFoundException e) {}    
+		
 		Log.d("IBM", "Signature: " + sig);
 
 		if (checkSig(sig)){
